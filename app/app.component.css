@@ -1,0 +1,7 @@
+input{
+    width: 400px;
+}
+table tr:hover{
+    background: blanchedalmond;
+    cursor: pointer;
+}

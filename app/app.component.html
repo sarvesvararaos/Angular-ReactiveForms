@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <h1>Product Details</h1>
+  <form [formGroup]="Products" (ngSubmit)="AddS()">
+    <div class="form-group">
+      <label>ProductId</label>
+      <input type="text" class="form-control" formControlName="ProductId" >
+    </div>
+    <div class="form-group">
+      <label>Produt Name</label>
+      <input type="text" class="form-control"formControlName="ProductName" >
+    </div>
+    <div class="form-group">
+      <label>Remarks</label>
+      <input type="text" class="form-control" formControlName="Remarks" >
+    </div>
+    <button class="btn-primary" type="submit">Submit</button>
+    
+  </form>
+  <button class="btn-primary" type="submit" (click)="DelS()">Delete</button>
+    <button class="btn-primary" type="submit" (click)="UpdateS()">update</button>
+  {{Products.value | json}}
+</div>
+<table align="center" border="1px solid black">
+  <tr>
+    <th>ProductId</th>
+    <th>ProductName</th>
+    <th>Remarks</th>
+  </tr>
+<tr *ngFor="let p of Produc">
+<td (click)="populated(p) ">{{p.ProductId}}</td>
+<td (click)="populated(p) ">{{p.ProductName}}</td>
+<td (click)="populated(p) ">{{p.Remarks}}</td>
+<!-- <td> <button class="btn-primary" type="submit" (click)="DelS(p.ProductId)">Delete</button></td> -->
+</tr>
+
+</table>
